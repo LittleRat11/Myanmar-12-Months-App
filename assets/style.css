@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 1.8rem;
+}
+
+.header #home {
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    text-align: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 12px 10px;
+}
+
+.months-container {
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: auto;
+}
+
+.months-container .card {
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+    height: 300px;
+    cursor: pointer;
+    border: 3px solid white;
+    background-color: white;
+}
+
+.months-container .card .card-img {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transition: .5s ease-in-out;
+}
+
+.months-container .card .card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.months-container .card .hoverImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* top: 0; */
+    top: -10000px;
+    z-index: 1;
+}
+
+.months-container .card .month-title {
+    width: 95%;
+    height: 15%;
+}
+
+.months-container .card .month-title {
+    font-size: 30px;
+    text-align: center;
+    padding: 8px;
+}
+
+.months-container .card .card-img:hover .hoverImg {
+    top: 0;
+}
+
+.months-container .card .card-img:hover .hoverImg:nth-child(2) {
+    top: 0;
+}
+
+.months-container .card .card-img:hover .hoverImg:nth-child(3) {
+    top: 0;
+}
+
+
+/* *result */
+
+.result-container {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.title-info {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    margin-bottom: 1.8em;
+}
+
+.title-info h4 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.title-info .back-btn {
+    padding: 10px 13px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.title-info .back-btn:hover {
+    background-color: #003C43;
+    color: white;
+}
+
+.month-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.month-descri .monthImg {
+    margin-bottom: 15px;
+}
+
+
+/* *pagination */
+
+.container .pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 1.8em;
+}
+
+.container .pagination .prev,
+.container .pagination .next {
+    color: #fff;
+    background-color: #6468C4;
+    font-size: 15px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.container .pagination .prev.disabled,
+.container .pagination .next.disabled {
+    background-color: rgba(96, 96, 96, 0.5);
+    color: white;
+    pointer-events: none;
+}
+
+.container .pagination .page {
+    font-size: 15px;
+    font-weight: bold;
+    color: #6468C4;
+    ;
+}
+
+.container .pagination .pageNum {
+    font-size: 15px;
+    color: #6468C4;
+}
+
+.months-container .card.hide {
+    display: none;
+}
+
+.months-container .card.show {
+    display: block;
+    animation: show .5s ease;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .months-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .month-about {
+        display: block;
+    }
+    .month-descri {
+        margin-bottom: 1.3rem;
+    }
+    .title-info .back-btn {
+        margin-top: 10px;
+    }
+}
